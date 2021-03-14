@@ -1,38 +1,48 @@
 import * as React from "react"
+import { Route, BrowserRouter, Switch } from "react-router-dom"
 import {
   ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
   theme,
 } from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+import { HomeComponent } from "./components/homecomp"
+// import { Page1 } from "./components/page1"
+// import { Page2 } from "./components/page2"
+// import { Page3 } from "./components/page3"
+// import { Page4 } from "./components/page4"
+// import { Page5 } from "./components/page5"
+// import { Page6 } from "./components/page6"
+// import { Page7 } from "./components/page7"
+// import { Page8 } from "./components/page8"
+// import { Page9 } from "./components/page9"
+// import { Page10 } from "./components/page10"
 
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
-  </ChakraProvider>
-)
+export class App extends React.Component {
+  render() {
+    return (
+      <ChakraProvider theme={theme}>
+        <BrowserRouter>
+          <Switch>
+            {/* <Route path="/page10" component={Page10} />
+            <Route path="/page9" component={Page9} />
+            <Route path="/page8" component={Page8} />
+            <Route path="/page7" component={Page7} />
+            <Route path="/page6" component={Page6} />
+            <Route path="/page5" component={Page5} />
+            <Route path="/page4" component={Page4} />
+            <Route path="/page3" component={Page3} />
+            <Route path="/page2" component={Page2} />
+            <Route path="/page1" component={Page1} /> */}
+            <Route path="/cptdownload" render={() => (window.location.href = "https://www.filehorse.com/download-cisco-packet-tracer-32/")} />
+
+            <Route path="/instagram" render={() => (window.location.href = "https://www.instagram.com/_aakashdeep_2000/")} />
+            <Route path="/" component={HomeComponent} />
+          </Switch>
+        </BrowserRouter>
+      </ChakraProvider>
+    )
+  }
+}
+
+
+
+
