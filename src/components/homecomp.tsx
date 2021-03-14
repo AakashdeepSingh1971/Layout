@@ -26,7 +26,7 @@ export function HomeComponent() {
 
         <Box>
             <Grid minH="110vh" p={3}>
-<Topbar/>
+{/* <Topbar/> */}
                 <ColorModeSwitcher justifySelf="flex-end" />
                 <VStack>
 
